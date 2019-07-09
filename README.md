@@ -18,6 +18,7 @@ I'll be using [SF Bay Area Bike Share](https://www.kaggle.com/benhamner/sf-bay-a
 ## Notebooks
 
 [Introduction and database](https://colab.research.google.com/drive/1CTkqQqJ0AeOVOyOt72wXPRA4EAelczT7)
+[EDA and feature engineering](https://colab.research.google.com/drive/1XqpKyyOcJvene56QvdpDkheXIPAPR4Zq)
 
 ## WIP
 This project will take a while ...
