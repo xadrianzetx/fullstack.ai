@@ -1,5 +1,6 @@
 import time
 import requests
+from tqdm import tqdm
 
 
 def map_altitudes(data, api_key):
@@ -18,7 +19,7 @@ def map_altitudes(data, api_key):
     url = 'https://maps.googleapis.com/maps/api/elevation/json?locations={},{}&key={}'
     out = {}
 
-    for key in data.keys():
+    for key in tqdm(data.keys()):
         # list of coordinates [lat, lon]
         coords = data[key]
         r = requests.get(url=url.format(coords[0], coords[1], api_key))
@@ -26,6 +27,6 @@ def map_altitudes(data, api_key):
         out[key] = {'data': coords, 'altitude': payload['results'][0]['elevation']}
 
         # API key restrictions
-        time.sleep(5)
+        time.sleep(2)
 
     return out
