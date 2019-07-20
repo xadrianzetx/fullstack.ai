@@ -45,6 +45,10 @@ def haversine_distance(a, b):
     :return:    float
                 distance between a and b in km
     """
+    assert len(a) == 2 and len(b) == 2
+    assert isinstance(a[0], float) and isinstance(a[1], float)
+    assert isinstance(b[0], float) and isinstance(b[1], float)
+
     r = 6373.0
 
     a = [radians(x) for x in a]
