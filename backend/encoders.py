@@ -1,13 +1,14 @@
+import pickle
 import numpy as np
 import pandas as pd
 
 
 class RobustOneHotEncoder:
 
-    def __init__(self, categorical):
+    def __init__(self, categorical: list):
         self.columns = categorical
-        self.fitted = False
         self.metadata = {}
+        self._fitted = False
 
     @staticmethod
     def _get_categories(df, col):
@@ -50,7 +51,7 @@ class RobustOneHotEncoder:
             categories, position = self._get_categories(df, col)
             self.metadata[col] = {'categories': categories, 'position': position}
 
-        self.fitted = True
+        self._fitted = True
 
     def transform(self, df):
         """
@@ -69,7 +70,7 @@ class RobustOneHotEncoder:
         if not all(col in df.columns for col in self.columns):
             raise ValueError('Could not find all columns to encode in DataFrame')
 
-        if not self.fitted:
+        if not self._fitted:
             raise ValueError('Need to fit or load encoder first')
 
         for col in self.columns:
@@ -78,8 +79,8 @@ class RobustOneHotEncoder:
             position = self.metadata[col]['position']
 
             # Specify levels and encode
-            type = pd.api.types.CategoricalDtype(categories=categories)
-            labels = df.iloc[:, [position]].astype(type)
+            dtype = pd.api.types.CategoricalDtype(categories=categories)
+            labels = df.iloc[:, [position]].astype(dtype)
             df = pd.concat([df, pd.get_dummies(labels)], axis=1)
 
         # drop original columns
@@ -107,8 +108,31 @@ class RobustOneHotEncoder:
 
         return encoded
 
-    def save_encoder(self):
-        pass
+    def save_encoder(self, path):
+        """
+        Save fitted encoder metadata
 
-    def load_encoder(self):
-        pass
+        :param path:    string
+                        Path to file
+
+        :return:        void
+        """
+        if self._fitted:
+            with open(path, 'wb') as file:
+                pickle.dump(self.metadata, file)
+
+        else:
+            raise ValueError('Need to fit encoder first')
+
+    def load_encoder(self, path):
+        """
+        Loads encoder metadata
+
+        :param path:    string
+                        Path to file
+
+        :return:        void
+        """
+        with open(path, 'rb') as file:
+            self.metadata = pickle.load(file)
+            self._fitted = True
