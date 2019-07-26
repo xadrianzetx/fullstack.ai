@@ -4,64 +4,111 @@ import pandas as pd
 
 class RobustOneHotEncoder:
 
-    def __init__(self):
-        self.pos = 0
-        self.columns = None
-        self.categories = None
-        # TODO support for multiple feats
-        # TODO tests
+    def __init__(self, categorical):
+        self.columns = categorical
+        self.fitted = False
+        self.metadata = {}
 
-    def _get_categories(self, df, col):
+    @staticmethod
+    def _get_categories(df, col):
         """
+        Finds position of column and unique categories
 
-        :param df:
-        :param col:
-        :return:
+        :param df:  pandas.DataFrame
+                    Original data frame
+        :param col: list
+                    Names of columns to encode
+
+        :return:    cats: list
+                    list of unique categories
+                    pos: int
+                    column position
         """
-        self.columns = col
-        self.pos = np.where(df.columns == col)[0][0]
-        cats = sorted(df.iloc[:, self.pos].value_counts(dropna=True).index)
+        pos = np.where(df.columns == col)[0][0]
+        cats = sorted(df.iloc[:, pos].value_counts(dropna=True).index)
 
-        return cats
+        return cats, pos
 
-    def fit(self, df, col):
+    def fit(self, df):
         """
+        Fits one hot encoder to selected columns
+        of data frame
 
-        :param df:
-        :param col:
-        :return:
+        :param df:  pandas.DataFrame
+                    Raw data frame
+
+        :return:    void
         """
-        assert col in df.columns
-        self.categories = self._get_categories(df, col)
+        if not isinstance(df, pd.DataFrame):
+            raise ValueError('Expected instance of pandas DataFrame')
 
-    def fit_transform(self, df, col):
-        """
+        if not all(col in df.columns for col in self.columns):
+            raise ValueError('Could not find all columns to encode in DataFrame')
 
-        :param df:
-        :param col:
-        :return:
-        """
-        assert col in df.columns
-        self.categories = self._get_categories(df, col)
-        t = pd.api.types.CategoricalDtype(categories=self.categories)
-        labels = df.iloc[:, [self.pos]].astype(t)
-        encoded = pd.merge([df, pd.get_dummies(labels)], axis=1)
-        encoded = encoded.drop([self.columns], axis=1)
+        for col in self.columns:
+            # find position and categories of each column
+            categories, position = self._get_categories(df, col)
+            self.metadata[col] = {'categories': categories, 'position': position}
 
-        return encoded
+        self.fitted = True
 
     def transform(self, df):
         """
+        Transforms data frame based on fitted
+        one hot encoder
 
-        :param df:
-        :return:
+        :param df:  pandas.DataFrame
+                    Raw data frame
+
+        :return:    pandas.DataFrame
+                    Original data frame with columns encoded
         """
-        t = pd.api.types.CategoricalDtype(categories=self.categories)
-        labels = df.iloc[:, [self.pos]].astype(t)
-        encoded = pd.merge([df, pd.get_dummies(labels)], axis=1)
-        encoded = encoded.drop([self.columns], axis=1)
+        if not isinstance(df, pd.DataFrame):
+            raise ValueError('Expected instance of pandas DataFrame')
+
+        if not all(col in df.columns for col in self.columns):
+            raise ValueError('Could not find all columns to encode in DataFrame')
+
+        if not self.fitted:
+            raise ValueError('Need to fit or load encoder first')
+
+        for col in self.columns:
+            # get column metadata
+            categories = self.metadata[col]['categories']
+            position = self.metadata[col]['position']
+
+            # Specify levels and encode
+            type = pd.api.types.CategoricalDtype(categories=categories)
+            labels = df.iloc[:, [position]].astype(type)
+            df = pd.concat([df, pd.get_dummies(labels)], axis=1)
+
+        # drop original columns
+        encoded = df.drop(self.columns, axis=1)
+
+        return encoded
+
+    def fit_transform(self, df):
+        """
+        Calls .fit() and .transform() in order
+        matching scikit-learn API
+
+        :param df:  pandas.DataFrame
+                    Raw data frame
+
+        :return:    pandas.DataFrame
+                    Original data frame with columns encoded
+        """
+        try:
+            self.fit(df)
+            encoded = self.transform(df)
+
+        except ValueError:
+            raise
 
         return encoded
 
     def save_encoder(self):
+        pass
+
+    def load_encoder(self):
         pass
