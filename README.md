@@ -20,6 +20,7 @@ I'll be using [SF Bay Area Bike Share](https://www.kaggle.com/benhamner/sf-bay-a
 * [Introduction and database](https://colab.research.google.com/drive/1CTkqQqJ0AeOVOyOt72wXPRA4EAelczT7)
 * [EDA and feature engineering](https://colab.research.google.com/drive/1XqpKyyOcJvene56QvdpDkheXIPAPR4Zq)
 * [Final preprocessing and models](https://colab.research.google.com/drive/1ScEaYTg3dOSH0qnIAvBZ7e-qSVSoxJG1)
+* [Bayesian optimization](https://colab.research.google.com/drive/1ZcOH0TnmNkCMbDoyjtXZCTyWQjEL_jEx)
 
 ## WIP
 This project will take a while ...
