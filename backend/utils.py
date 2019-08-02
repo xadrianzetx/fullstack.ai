@@ -1,7 +1,11 @@
 import time
 import requests
+import numpy as np
+import lightgbm as lgb
 from tqdm import tqdm
 from math import sin, cos, sqrt, atan2, radians
+from sklearn.model_selection import KFold
+from sklearn.metrics import mean_squared_error
 
 
 def map_altitudes(data, api_key):
@@ -60,3 +64,47 @@ def haversine_distance(a, b):
     dist = r * c
 
     return dist
+
+
+def lgbm_regression_cv(x, y, params, cv=10):
+    """
+    Objective function for skopt Bayesian optimization
+
+    :param x:       numpy array NxM
+                    features
+    :param y:       numpy array N
+                    response
+    :param params:  dict
+                    lgbm model parameters
+    :param cv:      int
+                    number of folds
+
+    :return:        float
+                    evaluation metric (MSE)
+    """
+    cv_pred = np.zeros(len(y))
+    kf = KFold(n_splits=cv, shuffle=True, random_state=42)
+
+    for train_idx, valid_idx in kf.split(x, y):
+        x_train, y_train = x[train_idx], y[train_idx]
+        x_valid, y_valid = x[valid_idx], y[valid_idx]
+
+        # convert to lgb.Dataset
+        y_train = y_train.ravel()
+        y_valid = y_valid.ravel()
+        lgb_train = lgb.Dataset(x_train, y_train)
+        lgb_valid = lgb.Dataset(x_valid, y_valid)
+
+        clf = lgb.train(params,
+                        lgb_train,
+                        num_boost_round=1000,
+                        valid_sets=lgb_valid,
+                        early_stopping_rounds=5)
+
+        cv_pred[valid_idx] = clf.predict(x_valid, num_iteration=clf.best_iteration)
+
+    # exponential to get back from log response
+    cv_pred = [np.expm1(i) for i in cv_pred]
+    y = [np.expm1(i) for i in y]
+
+    return mean_squared_error(y, cv_pred)
