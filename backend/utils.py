@@ -99,7 +99,8 @@ def lgbm_regression_cv(x, y, params, cv=10):
                         lgb_train,
                         num_boost_round=1000,
                         valid_sets=lgb_valid,
-                        early_stopping_rounds=5)
+                        early_stopping_rounds=5,
+                        verbose_eval=False)
 
         cv_pred[valid_idx] = clf.predict(x_valid, num_iteration=clf.best_iteration)
 
