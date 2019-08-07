@@ -31,9 +31,14 @@ class TripTimeEstimator:
 
     def predict(self, data):
         """
+        Estimates trip time by averaging out of fold
+        predictions from k lightgbm boosters
 
-        :param data:
-        :return:
+        :param data:    np.ndarray (7, )
+                        array with preprocessed features
+
+        :return:        float
+                        predicted trip time (in minutes)
         """
         if not isinstance(data, np.ndarray):
             passed = type(data)
@@ -45,19 +50,17 @@ class TripTimeEstimator:
         if any(np.isnan(data)):
             raise ValueError('Got NaN in data')
 
-        for val in data:
-            passed = type(val)
-
-            if passed not in [float, int]:
-                raise ValueError('Expected data type to be float or int, got {} instead'.format(passed))
+        if data.dtype is not np.dtype('float64'):
+            raise ValueError('Expected data type to be float64, got {} instead'.format(data.dtype))
 
         # init pred and get weighted prediction
         # from each fold
         pred = 0.
+        data = data.reshape(1, -1)
 
         for clf in self._models:
             # each pred is log(duration)
-            log_pred = clf.predict(data)
+            log_pred = clf.predict(data)[0]
             pred += np.expm1(log_pred) / self._n_folds
 
         return pred
