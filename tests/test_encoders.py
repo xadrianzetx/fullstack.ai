@@ -54,3 +54,7 @@ class TestRobustUnitTest(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             enc.transform(df)
+
+
+if __name__ == '__main__':
+    unittest.main()

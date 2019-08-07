@@ -57,3 +57,7 @@ class TestHaversine(unittest.TestCase):
 
         with self.assertRaises(AssertionError):
             utils.haversine_distance(p1, p2)
+
+
+if __name__ == '__main__':
+    unittest.main()
