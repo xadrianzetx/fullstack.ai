@@ -28,10 +28,19 @@ class TripTimePreprocessor:
 
     def set(self, station_id, mode):
         """
+        Sets start or end point for travel time prediction
 
-        :param station_id:
-        :param mode:
-        :return:
+        Retrieves relevant data based on station id and puts
+        it in designated spot in array to match model requirements
+
+        :param station_id:  str
+                            station id matching one of those
+                            in SF Bike data
+        :param mode:        str
+                            'start' sets station as starting point
+                            'end' sets station as end point
+
+        :return:            void
         """
         valid_ids = [int(i) for i in self._data.keys()]
 
@@ -45,7 +54,7 @@ class TripTimePreprocessor:
             raise KeyError('Invalid station id value passed to preprocessor')
 
         if mode not in ['start', 'end']:
-            raise ValueError('')
+            raise ValueError('Invalid mode passed to preprocessor')
 
         # load values from lookup
         alt = self._coords[station_id]['altitude']
@@ -64,4 +73,20 @@ class TripTimePreprocessor:
             self._set[1] = True
 
     def transform(self):
-        pass
+        """
+        Transforms start and end points into model features
+
+        :return:    np.ndarray
+                    preprocessed feature array
+        """
+        if all(self._set):
+            # get lon, lat for start and end point
+            # and calculate distance
+            a = (self._data[0], self._data[1])
+            b = (self._data[3], self._data[4])
+            self._data[6] = haversine_distance(a, b)
+
+        else:
+            raise ValueError('Need to set both start and end points first')
+
+        return self._data
