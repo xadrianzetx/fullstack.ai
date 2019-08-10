@@ -42,7 +42,7 @@ class TripTimePreprocessor:
 
         :return:            void
         """
-        valid_ids = [int(i) for i in self._data.keys()]
+        valid_ids = [int(i) for i in self._coords.keys()]
 
         try:
             int(station_id)
