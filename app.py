@@ -1,6 +1,5 @@
-import sys
 import json
-from flask import Flask, Response, render_template, request, abort
+from flask import Flask, Response, render_template, request
 from backend.preprocessing import TripTimePreprocessor
 from backend.models import TripTimeEstimator
 
@@ -11,24 +10,19 @@ app = Flask(__name__)
 def get_trip_time(start_id, end_id):
     prep = TripTimePreprocessor()
     model = TripTimeEstimator(n_folds=10)
+    valid = True
 
     try:
         prep.set(start_id, mode='start')
         prep.set(end_id, mode='end')
+        data = prep.transform()
+        pred = model.predict(data)
 
     except KeyError:
-        raise
+        pred = None
+        valid = False
 
-    data = prep.transform()
-    pred = model.predict(data)
-
-    return pred
-
-
-@app.errorhandler(404)
-def not_found(error):
-    payload = {'error: Invalid station id passed to API'}
-    return Response(payload, status=404, mimetype='application/json')
+    return pred, valid
 
 
 @app.route('/')
@@ -41,28 +35,32 @@ def api():
     # example call /api?start=42&end=63
     start_id = request.args.get('start', type=str)
     end_id = request.args.get('end', type=str)
+    pred, valid = get_trip_time(start_id, end_id)
 
-    try:
-        pred = get_trip_time(start_id, end_id)
+    if valid:
+        payload = {
+            'start':
+                {
+                    'station_name': 'foo',
+                    'coordinates': [0, 0]
+                },
+            'end':
+                {
+                    'station_name': 'bar',
+                    'coordinates': [0, 0]
+                },
+            'predicted_trip_time': pred
+        }
 
-    except KeyError:
-        abort(404)
+        payload = json.dumps(payload)
+        code = 200
 
-    payload = {
-        'start':
-            {
-                'station_name': 'foo',
-                'coordinates': [0, 0]
-            },
-        'end':
-            {
-                'station_name': 'bar',
-                'coordinates': [0, 0]
-            },
-        'predicted_trip_time': pred
-    }
+    else:
+        # could not find station in lookup
+        payload = {'error: Invalid station id passed to API'}
+        code = 404
 
-    return Response(json.dumps(payload), status=200, mimetype='application/json')
+    return Response(payload, status=code, mimetype='application/json')
 
 
 if __name__ == '__main__':
