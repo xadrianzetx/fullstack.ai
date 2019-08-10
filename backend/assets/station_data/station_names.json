@@ -1,0 +1,177 @@
+{
+    "41": {
+        "name": "Clay at Battery",
+        "latitude": 37.795001,
+        "longitude": -122.39997
+    },
+    "42": {
+        "name": "Davis at Jackson",
+        "latitude": 37.79728,
+        "longitude": -122.398436
+    },
+    "45": {
+        "name": "Commercial at Montgomery",
+        "latitude": 37.794231,
+        "longitude": -122.402923
+    },
+    "46": {
+        "name": "Washington at Kearney",
+        "latitude": 37.795425,
+        "longitude": -122.404767
+    },
+    "47": {
+        "name": "Post at Kearney",
+        "latitude": 37.788975,
+        "longitude": -122.403452
+    },
+    "48": {
+        "name": "Embarcadero at Vallejo",
+        "latitude": 37.799953,
+        "longitude": -122.398525
+    },
+    "49": {
+        "name": "Spear at Folsom",
+        "latitude": 37.790302,
+        "longitude": -122.390637
+    },
+    "50": {
+        "name": "Harry Bridges Plaza (Ferry Building)",
+        "latitude": 37.795392,
+        "longitude": -122.394203
+    },
+    "51": {
+        "name": "Embarcadero at Folsom",
+        "latitude": 37.79146400000001,
+        "longitude": -122.391034
+    },
+    "39": {
+        "name": "Powell Street BART",
+        "latitude": 37.78387100000001,
+        "longitude": -122.408433
+    },
+    "54": {
+        "name": "Embarcadero at Bryant",
+        "latitude": 37.787152,
+        "longitude": -122.388013
+    },
+    "55": {
+        "name": "Temporary Transbay Terminal (Howard at Beale)",
+        "latitude": 37.789756,
+        "longitude": -122.394643
+    },
+    "56": {
+        "name": "Beale at Market",
+        "latitude": 37.792251,
+        "longitude": -122.39708600000002
+    },
+    "57": {
+        "name": "5th at Howard",
+        "latitude": 37.781752,
+        "longitude": -122.405127
+    },
+    "58": {
+        "name": "San Francisco City Hall",
+        "latitude": 37.77865,
+        "longitude": -122.418235
+    },
+    "59": {
+        "name": "Golden Gate at Polk",
+        "latitude": 37.781332,
+        "longitude": -122.418603
+    },
+    "60": {
+        "name": "Embarcadero at Sansome",
+        "latitude": 37.80477,
+        "longitude": -122.403234
+    },
+    "61": {
+        "name": "2nd at Townsend",
+        "latitude": 37.780526,
+        "longitude": -122.39028799999998
+    },
+    "62": {
+        "name": "2nd at Folsom",
+        "latitude": 37.785299,
+        "longitude": -122.39623600000002
+    },
+    "63": {
+        "name": "Howard at 2nd",
+        "latitude": 37.78697800000001,
+        "longitude": -122.398108
+    },
+    "64": {
+        "name": "2nd at South Park",
+        "latitude": 37.782259,
+        "longitude": -122.392738
+    },
+    "65": {
+        "name": "Townsend at 7th",
+        "latitude": 37.771058,
+        "longitude": -122.402717
+    },
+    "66": {
+        "name": "South Van Ness at Market",
+        "latitude": 37.774814,
+        "longitude": -122.418954
+    },
+    "67": {
+        "name": "Market at 10th",
+        "latitude": 37.776619,
+        "longitude": -122.417385
+    },
+    "68": {
+        "name": "Yerba Buena Center of the Arts (3rd @ Howard)",
+        "latitude": 37.784878000000006,
+        "longitude": -122.401014
+    },
+    "69": {
+        "name": "San Francisco Caltrain 2 (330 Townsend)",
+        "latitude": 37.7766,
+        "longitude": -122.39547
+    },
+    "70": {
+        "name": "San Francisco Caltrain (Townsend at 4th)",
+        "latitude": 37.776617,
+        "longitude": -122.39526
+    },
+    "71": {
+        "name": "Powell at Post (Union Square)",
+        "latitude": 37.788446,
+        "longitude": -122.408499
+    },
+    "72": {
+        "name": "Civic Center BART (7th at Market)",
+        "latitude": 37.781039,
+        "longitude": -122.411748
+    },
+    "73": {
+        "name": "Grant Avenue at Columbus Avenue",
+        "latitude": 37.798522,
+        "longitude": -122.407245
+    },
+    "74": {
+        "name": "Steuart at Market",
+        "latitude": 37.794139,
+        "longitude": -122.394434
+    },
+    "75": {
+        "name": "Mechanics Plaza (Market at Battery)",
+        "latitude": 37.7913,
+        "longitude": -122.399051
+    },
+    "76": {
+        "name": "Market at 4th",
+        "latitude": 37.786305,
+        "longitude": -122.404966
+    },
+    "77": {
+        "name": "Market at Sansome",
+        "latitude": 37.789625,
+        "longitude": -122.400811
+    },
+    "82": {
+        "name": "Broadway St at Battery St",
+        "latitude": 37.798541,
+        "longitude": -122.40086200000002
+    }
+}
