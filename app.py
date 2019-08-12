@@ -46,9 +46,41 @@ def get_trip_time(start_id, end_id):
 @APP.route('/')
 def index():
     """
-    User interface
+    User interface - main page
     """
     return render_template('index.html')
+
+
+@APP.route('/get_stations', methods=['GET'])
+def get_stations():
+    """
+    User interface - station info
+
+    GET:    json
+            valid station ids with names and coordinates
+    """
+    path = 'backend/assets/station_data/'
+    file = 'station_names.json'
+
+    with open(os.path.join(path, file), 'r') as f:
+        data = json.load(f)
+
+    return Response(json.dumps(data, indent=4), status=200, mimetype='application/json')
+
+
+@APP.route('/get_prediction', methods=['GET', 'POST'])
+def get_prediction():
+    """
+    User interface - trip time prediction
+
+    POST:   json
+            start and end point coordinates
+    GET:    json
+            predicted trip time
+    """
+    # TODO this
+    # use get_trip_time
+    pass
 
 
 @APP.route('/api', methods=['GET'])
@@ -93,6 +125,7 @@ def api():
 def api_stations():
     """
     API interface - station info
+    example call: /api/stations
 
     GET:    json
             valid station ids with names
