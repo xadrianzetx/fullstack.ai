@@ -68,25 +68,34 @@ def get_stations():
     return Response(json.dumps(data, indent=4), status=200, mimetype='application/json')
 
 
-@APP.route('/get_prediction', methods=['GET', 'POST'])
+@APP.route('/get_prediction', methods=['POST'])
 def get_prediction():
     """
     User interface - trip time prediction
 
     POST:   json
-            start and end point coordinates
-    GET:    json
-            predicted trip time
+            start and end station ids
     """
-    # TODO this
-    # use get_trip_time
-    pass
+    start_id = request.json['start']
+    end_id = request.json['end']
+    pred, valid = get_trip_time(start_id, end_id)
+
+    if valid:
+        payload = {'predicted': pred}
+        payload = json.dumps(payload)
+        code = 200
+
+    else:
+        payload = {'predicted': 'who knows'}
+        code = 404
+
+    return Response(payload, status=code, mimetype='application/json')
 
 
 @APP.route('/api', methods=['GET'])
 def api():
     """
-    API interface - trip time prediction
+    API - trip time prediction
     example call: /api?start=42&end=63
 
     GET:    json
@@ -124,7 +133,7 @@ def api():
 @APP.route('/api/stations', methods=['GET'])
 def api_stations():
     """
-    API interface - station info
+    API - station info
     example call: /api/stations
 
     GET:    json
