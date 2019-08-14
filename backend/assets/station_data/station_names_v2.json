@@ -1,0 +1,772 @@
+{
+    "41": {
+        "name": "Clay at Battery",
+        "latitude": 37.795001,
+        "longitude": -122.39997,
+        "pop_dest": {
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            },
+            "39": {
+                "name": "Powell Street BART",
+                "latitude": 37.78387100000001,
+                "longitude": -122.408433
+            },
+            "82": {
+                "name": "Broadway St at Battery St",
+                "latitude": 37.798541,
+                "longitude": -122.40086200000002
+            }
+        }
+    },
+    "42": {
+        "name": "Davis at Jackson",
+        "latitude": 37.79728,
+        "longitude": -122.398436,
+        "pop_dest": {
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            },
+            "56": {
+                "name": "Beale at Market",
+                "latitude": 37.792251,
+                "longitude": -122.39708600000002
+            },
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            }
+        }
+    },
+    "45": {
+        "name": "Commercial at Montgomery",
+        "latitude": 37.794231,
+        "longitude": -122.402923,
+        "pop_dest": {
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            },
+            "42": {
+                "name": "Davis at Jackson",
+                "latitude": 37.79728,
+                "longitude": -122.398436
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            }
+        }
+    },
+    "46": {
+        "name": "Washington at Kearney",
+        "latitude": 37.795425,
+        "longitude": -122.404767,
+        "pop_dest": {
+            "39": {
+                "name": "Powell Street BART",
+                "latitude": 37.78387100000001,
+                "longitude": -122.408433
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "56": {
+                "name": "Beale at Market",
+                "latitude": 37.792251,
+                "longitude": -122.39708600000002
+            }
+        }
+    },
+    "47": {
+        "name": "Post at Kearney",
+        "latitude": 37.788975,
+        "longitude": -122.403452,
+        "pop_dest": {
+            "64": {
+                "name": "2nd at South Park",
+                "latitude": 37.782259,
+                "longitude": -122.392738
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            }
+        }
+    },
+    "48": {
+        "name": "Embarcadero at Vallejo",
+        "latitude": 37.799953,
+        "longitude": -122.398525,
+        "pop_dest": {
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            }
+        }
+    },
+    "49": {
+        "name": "Spear at Folsom",
+        "latitude": 37.790302,
+        "longitude": -122.390637,
+        "pop_dest": {
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            }
+        }
+    },
+    "50": {
+        "name": "Harry Bridges Plaza (Ferry Building)",
+        "latitude": 37.795392,
+        "longitude": -122.394203,
+        "pop_dest": {
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            },
+            "48": {
+                "name": "Embarcadero at Vallejo",
+                "latitude": 37.799953,
+                "longitude": -122.398525
+            },
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            }
+        }
+    },
+    "51": {
+        "name": "Embarcadero at Folsom",
+        "latitude": 37.79146400000001,
+        "longitude": -122.391034,
+        "pop_dest": {
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            },
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            },
+            "64": {
+                "name": "2nd at South Park",
+                "latitude": 37.782259,
+                "longitude": -122.392738
+            }
+        }
+    },
+    "39": {
+        "name": "Powell Street BART",
+        "latitude": 37.78387100000001,
+        "longitude": -122.408433,
+        "pop_dest": {
+            "66": {
+                "name": "South Van Ness at Market",
+                "latitude": 37.774814,
+                "longitude": -122.418954
+            },
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            },
+            "72": {
+                "name": "Civic Center BART (7th at Market)",
+                "latitude": 37.781039,
+                "longitude": -122.411748
+            }
+        }
+    },
+    "54": {
+        "name": "Embarcadero at Bryant",
+        "latitude": 37.787152,
+        "longitude": -122.388013,
+        "pop_dest": {
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "48": {
+                "name": "Embarcadero at Vallejo",
+                "latitude": 37.799953,
+                "longitude": -122.398525
+            },
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            }
+        }
+    },
+    "55": {
+        "name": "Temporary Transbay Terminal (Howard at Beale)",
+        "latitude": 37.789756,
+        "longitude": -122.394643,
+        "pop_dest": {
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            },
+            "82": {
+                "name": "Broadway St at Battery St",
+                "latitude": 37.798541,
+                "longitude": -122.40086200000002
+            },
+            "64": {
+                "name": "2nd at South Park",
+                "latitude": 37.782259,
+                "longitude": -122.392738
+            }
+        }
+    },
+    "56": {
+        "name": "Beale at Market",
+        "latitude": 37.792251,
+        "longitude": -122.39708600000002,
+        "pop_dest": {
+            "82": {
+                "name": "Broadway St at Battery St",
+                "latitude": 37.798541,
+                "longitude": -122.40086200000002
+            },
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            },
+            "48": {
+                "name": "Embarcadero at Vallejo",
+                "latitude": 37.799953,
+                "longitude": -122.398525
+            }
+        }
+    },
+    "57": {
+        "name": "5th at Howard",
+        "latitude": 37.781752,
+        "longitude": -122.405127,
+        "pop_dest": {
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            },
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            }
+        }
+    },
+    "58": {
+        "name": "San Francisco City Hall",
+        "latitude": 37.77865,
+        "longitude": -122.418235,
+        "pop_dest": {
+            "39": {
+                "name": "Powell Street BART",
+                "latitude": 37.78387100000001,
+                "longitude": -122.408433
+            },
+            "66": {
+                "name": "South Van Ness at Market",
+                "latitude": 37.774814,
+                "longitude": -122.418954
+            },
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            }
+        }
+    },
+    "59": {
+        "name": "Golden Gate at Polk",
+        "latitude": 37.781332,
+        "longitude": -122.418603,
+        "pop_dest": {
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            },
+            "72": {
+                "name": "Civic Center BART (7th at Market)",
+                "latitude": 37.781039,
+                "longitude": -122.411748
+            },
+            "39": {
+                "name": "Powell Street BART",
+                "latitude": 37.78387100000001,
+                "longitude": -122.408433
+            }
+        }
+    },
+    "60": {
+        "name": "Embarcadero at Sansome",
+        "latitude": 37.80477,
+        "longitude": -122.403234,
+        "pop_dest": {
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            }
+        }
+    },
+    "61": {
+        "name": "2nd at Townsend",
+        "latitude": 37.780526,
+        "longitude": -122.39028799999998,
+        "pop_dest": {
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            },
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            }
+        }
+    },
+    "62": {
+        "name": "2nd at Folsom",
+        "latitude": 37.785299,
+        "longitude": -122.39623600000002,
+        "pop_dest": {
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            }
+        }
+    },
+    "63": {
+        "name": "Howard at 2nd",
+        "latitude": 37.78697800000001,
+        "longitude": -122.398108,
+        "pop_dest": {
+            "64": {
+                "name": "2nd at South Park",
+                "latitude": 37.782259,
+                "longitude": -122.392738
+            },
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            }
+        }
+    },
+    "64": {
+        "name": "2nd at South Park",
+        "latitude": 37.782259,
+        "longitude": -122.392738,
+        "pop_dest": {
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "47": {
+                "name": "Post at Kearney",
+                "latitude": 37.788975,
+                "longitude": -122.403452
+            }
+        }
+    },
+    "65": {
+        "name": "Townsend at 7th",
+        "latitude": 37.771058,
+        "longitude": -122.402717,
+        "pop_dest": {
+            "72": {
+                "name": "Civic Center BART (7th at Market)",
+                "latitude": 37.781039,
+                "longitude": -122.411748
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            }
+        }
+    },
+    "66": {
+        "name": "South Van Ness at Market",
+        "latitude": 37.774814,
+        "longitude": -122.418954,
+        "pop_dest": {
+            "72": {
+                "name": "Civic Center BART (7th at Market)",
+                "latitude": 37.781039,
+                "longitude": -122.411748
+            },
+            "39": {
+                "name": "Powell Street BART",
+                "latitude": 37.78387100000001,
+                "longitude": -122.408433
+            },
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            }
+        }
+    },
+    "67": {
+        "name": "Market at 10th",
+        "latitude": 37.776619,
+        "longitude": -122.417385,
+        "pop_dest": {
+            "39": {
+                "name": "Powell Street BART",
+                "latitude": 37.78387100000001,
+                "longitude": -122.408433
+            },
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            },
+            "72": {
+                "name": "Civic Center BART (7th at Market)",
+                "latitude": 37.781039,
+                "longitude": -122.411748
+            }
+        }
+    },
+    "68": {
+        "name": "Yerba Buena Center of the Arts (3rd @ Howard)",
+        "latitude": 37.784878000000006,
+        "longitude": -122.401014,
+        "pop_dest": {
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            },
+            "64": {
+                "name": "2nd at South Park",
+                "latitude": 37.782259,
+                "longitude": -122.392738
+            }
+        }
+    },
+    "69": {
+        "name": "San Francisco Caltrain 2 (330 Townsend)",
+        "latitude": 37.7766,
+        "longitude": -122.39547,
+        "pop_dest": {
+            "39": {
+                "name": "Powell Street BART",
+                "latitude": 37.78387100000001,
+                "longitude": -122.408433
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "51": {
+                "name": "Embarcadero at Folsom",
+                "latitude": 37.79146400000001,
+                "longitude": -122.391034
+            }
+        }
+    },
+    "70": {
+        "name": "San Francisco Caltrain (Townsend at 4th)",
+        "latitude": 37.776617,
+        "longitude": -122.39526,
+        "pop_dest": {
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "51": {
+                "name": "Embarcadero at Folsom",
+                "latitude": 37.79146400000001,
+                "longitude": -122.391034
+            },
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            }
+        }
+    },
+    "71": {
+        "name": "Powell at Post (Union Square)",
+        "latitude": 37.788446,
+        "longitude": -122.408499,
+        "pop_dest": {
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            },
+            "42": {
+                "name": "Davis at Jackson",
+                "latitude": 37.79728,
+                "longitude": -122.398436
+            }
+        }
+    },
+    "72": {
+        "name": "Civic Center BART (7th at Market)",
+        "latitude": 37.781039,
+        "longitude": -122.411748,
+        "pop_dest": {
+            "66": {
+                "name": "South Van Ness at Market",
+                "latitude": 37.774814,
+                "longitude": -122.418954
+            },
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            },
+            "39": {
+                "name": "Powell Street BART",
+                "latitude": 37.78387100000001,
+                "longitude": -122.408433
+            }
+        }
+    },
+    "73": {
+        "name": "Grant Avenue at Columbus Avenue",
+        "latitude": 37.798522,
+        "longitude": -122.407245,
+        "pop_dest": {
+            "77": {
+                "name": "Market at Sansome",
+                "latitude": 37.789625,
+                "longitude": -122.400811
+            },
+            "51": {
+                "name": "Embarcadero at Folsom",
+                "latitude": 37.79146400000001,
+                "longitude": -122.391034
+            },
+            "56": {
+                "name": "Beale at Market",
+                "latitude": 37.792251,
+                "longitude": -122.39708600000002
+            }
+        }
+    },
+    "74": {
+        "name": "Steuart at Market",
+        "latitude": 37.794139,
+        "longitude": -122.394434,
+        "pop_dest": {
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            },
+            "48": {
+                "name": "Embarcadero at Vallejo",
+                "latitude": 37.799953,
+                "longitude": -122.398525
+            },
+            "51": {
+                "name": "Embarcadero at Folsom",
+                "latitude": 37.79146400000001,
+                "longitude": -122.391034
+            }
+        }
+    },
+    "75": {
+        "name": "Mechanics Plaza (Market at Battery)",
+        "latitude": 37.7913,
+        "longitude": -122.399051,
+        "pop_dest": {
+            "39": {
+                "name": "Powell Street BART",
+                "latitude": 37.78387100000001,
+                "longitude": -122.408433
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "66": {
+                "name": "South Van Ness at Market",
+                "latitude": 37.774814,
+                "longitude": -122.418954
+            }
+        }
+    },
+    "76": {
+        "name": "Market at 4th",
+        "latitude": 37.786305,
+        "longitude": -122.404966,
+        "pop_dest": {
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            },
+            "72": {
+                "name": "Civic Center BART (7th at Market)",
+                "latitude": 37.781039,
+                "longitude": -122.411748
+            }
+        }
+    },
+    "77": {
+        "name": "Market at Sansome",
+        "latitude": 37.789625,
+        "longitude": -122.400811,
+        "pop_dest": {
+            "64": {
+                "name": "2nd at South Park",
+                "latitude": 37.782259,
+                "longitude": -122.392738
+            },
+            "50": {
+                "name": "Harry Bridges Plaza (Ferry Building)",
+                "latitude": 37.795392,
+                "longitude": -122.394203
+            },
+            "61": {
+                "name": "2nd at Townsend",
+                "latitude": 37.780526,
+                "longitude": -122.39028799999998
+            }
+        }
+    },
+    "82": {
+        "name": "Broadway St at Battery St",
+        "latitude": 37.798541,
+        "longitude": -122.40086200000002,
+        "pop_dest": {
+            "56": {
+                "name": "Beale at Market",
+                "latitude": 37.792251,
+                "longitude": -122.39708600000002
+            },
+            "74": {
+                "name": "Steuart at Market",
+                "latitude": 37.794139,
+                "longitude": -122.394434
+            },
+            "75": {
+                "name": "Mechanics Plaza (Market at Battery)",
+                "latitude": 37.7913,
+                "longitude": -122.399051
+            }
+        }
+    }
+}
