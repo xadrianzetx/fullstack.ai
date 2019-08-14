@@ -16,6 +16,7 @@ class MapEventHandler {
         // set starting location
         this.startPointSet = true;
         this.startStationId = data.target.options.id;
+        this.startStationCoords = data['latlng'];
     }
 
     setEndPoint(data) {
