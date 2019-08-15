@@ -3,6 +3,7 @@ const handler = new MapEventHandler();
 function onMarkerClick(data) {
     
     if (!handler.isStartPointSet && !handler.isPredicted) {
+        console.log(data);
         // new starting point
         handler.setStartPoint(data);
         var popularStations = data['target']['options']['popular'];
@@ -13,13 +14,13 @@ function onMarkerClick(data) {
         for (key in popularStations) {
             // get top 3 most popular endpoints from current station
             var popularCoords = popularStations[key];
-            var latlng = [
-                [startCoords['lat'], startCoords['lng']], 
-                [popularCoords['latitude'], popularCoords['longitude']]
-            ];
+            var latlngStart = [startCoords['lat'], startCoords['lng']];
+            var latlngEnd = [popularCoords['latitude'], popularCoords['longitude']];
+            var latlng = [latlngStart, latlngEnd];
             
-            // TODO customize those, ok?
-            L.polyline(latlng).addTo(map);
+            var poly = L.polyline(latlng);
+            poly.setStyle({color: 'black'});
+            poly.addTo(map);
         }
 
         $('.notice-current').html('<strong>Start</strong> ' + startName);
@@ -45,7 +46,9 @@ function onMarkerClick(data) {
                 [currentCoords['lat'], currentCoords['lng']]
             ];
 
-            L.polyline(latlng).addTo(map);
+            var poly = L.polyline(latlng);
+            poly.setStyle({color: 'red'});
+            poly.addTo(map);
 
             for (i = 0; i <= 2; i++) {
                 // turn off most popular routes
@@ -122,12 +125,39 @@ $.ajax({
     url: '/get_stations',
     contentType: 'application/json',
     success: function(data) {
+        var i = 0;
+
         for (var key in data) {
             // load all stations with id and metadata
-            var station = data[key]
+            var station = data[key];
+            // that's a big nono. TODO store station color in names.json
+            const color = palette[i.toString()]['hex'];
+            i++;
+
+            // src https://stackoverflow.com/questions/23567203/leaflet-changing-marker-color
+            const markerHtmlStyles = `
+                background-color: ${color};
+                width: 1.5rem;
+                height: 1.5rem;
+                display: block;
+                left: -1.5rem;
+                top: -1.5rem;
+                position: relative;
+                border-radius: 3rem 3rem 0;
+                transform: rotate(45deg);
+                border: 1px solid #FFFFFF`;
+
+            const icon = L.divIcon({
+                className: "my-custom-pin",
+                iconAnchor: [-10, 4],
+                labelAnchor: [0, 0],
+                popupAnchor: [0, 0],
+                html: `<span style="${markerHtmlStyles}" />`
+            });
+
             var marker = L.marker(
                 [station['latitude'], station['longitude']],
-                {id: key, name: station['name'], popular: data[key]['pop_dest']}
+                {id: key, name: station['name'], popular: data[key]['pop_dest'], icon: icon, icolor: color}
             );
 
             marker.addTo(map);
