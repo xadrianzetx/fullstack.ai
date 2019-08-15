@@ -1,4 +1,83 @@
-#map {
+body {
     height: 100%;
-    width: 80%;
+    width: 100%;
+}
+
+.fill { 
+    min-height: 100%;
+    height: 100%;
+    min-width: 100%;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding-left: 0%;
+}
+
+.row {
+    height: 100%;
+}
+
+#map {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.notice {
+    padding: 15px;
+    height: 100px;
+    background-color: #fafafa;
+    border-bottom: 4px solid #7f7f84;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+       -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+            box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+}
+
+.notice-current {
+    border-color: #80D651;
+}
+
+.notice-current>strong {
+    color: #80D651;
+}
+
+.notice-popular-0 {
+    border-color: #45ABCD;
+}
+
+.notice-popular-0>strong {
+    color: #45ABCD;
+}
+
+.notice-popular-1 {
+    border-color: #FEAF20;
+}
+
+.notice-popular-1>strong {
+    color: #FEAF20;
+}
+
+.notice-popular-2 {
+    border-color: #d73814;
+}
+
+.notice-popular-2>strong {
+    color: #d73814;
+}
+
+.notice-end {
+    border-color: #d73814;
+}
+
+.notice-end>strong {
+    color: #d73814;
+}
+
+.notice-predicted {
+    border-color: #d73814;
+}
+
+.notice-predicted>strong {
+    color: #d73814;
 }

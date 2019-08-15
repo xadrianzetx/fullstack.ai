@@ -1,3 +1,10 @@
+$('.notice-current').toggle();
+$('.notice-popular-0').toggle();
+$('.notice-popular-1').toggle();
+$('.notice-popular-2').toggle();
+$('.notice-end').toggle();
+$('.notice-predicted').toggle();
+
 const handler = new MapEventHandler();
 
 function onMarkerClick(data) {
@@ -6,6 +13,7 @@ function onMarkerClick(data) {
         // new starting point
         handler.setStartPoint(data);
         var popularStations = data.target.options.popular
+        var keys = Object.keys(popularStations);
         var startCoords = data['latlng'];
 
         for (key in popularStations) {
@@ -20,13 +28,22 @@ function onMarkerClick(data) {
             L.polyline(latlng).addTo(map);
         }
 
+        for (i = 0; i <= 2; i++) {
+            var key = keys[i];
+            var name = popularStations[key]['name'];
+            $('.notice-popular-' + i).toggle();
+            $('.notice-popular-' + i).html('<strong>Popular destination</strong> ' + name);
+        }
+
+        $('.notice-current').toggle();
+
     } else if (handler.isStartPointSet && !handler.isPredicted) {
         // when starting point has been set
         // set end point and await prediction
         handler.setEndPoint(data).then(function (datum) {
-            // clear most popular routes and
-            // add polyline for selected one
+            // clear most popular routes
             clearAllPolylines();
+
             var startCoords = handler.startStationCoords;
             var currentCoords = data['latlng'];
             var latlng = [
@@ -34,10 +51,16 @@ function onMarkerClick(data) {
                 [currentCoords['lat'], currentCoords['lng']]
             ];
 
-            // TODO again, customize
+            // add polyline for selected one
             L.polyline(latlng).addTo(map);
+
+            $('.notice-popular-0').toggle();
+            $('.notice-popular-1').toggle();
+            $('.notice-popular-2').toggle();
+            $('.notice-end').toggle();
+            $('.notice-predicted').toggle();
+
             console.log(datum['predicted']);
-            // TODO this also should handle text updating
         });
 
     }
@@ -45,16 +68,22 @@ function onMarkerClick(data) {
 
 function onMapClick(data) {
 
-    if (handler.isPredicted) {
+    if (handler.isPredicted && handler.isStartPointSet) {
         // prediction has been made reset map to original state
         handler.reset();
         clearAllPolylines();
-        // TODO reset text
+        $('.notice-current').toggle();
+        $('.notice-end').toggle();
+        $('.notice-predicted').toggle();
 
-    } else {
+    } else if (!handler.isPredicted && handler.isStartPointSet) {
         // reset without prediction on user call
         handler.startPointSet = false;
         clearAllPolylines();
+        $('.notice-current').toggle();
+        $('.notice-popular-0').toggle();
+        $('.notice-popular-1').toggle();
+        $('.notice-popular-2').toggle();
 
     }
 }
