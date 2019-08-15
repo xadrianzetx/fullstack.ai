@@ -24,6 +24,7 @@ body {
 }
 
 .notice {
+    display: none;
     padding: 15px;
     height: 100px;
     background-color: #fafafa;
