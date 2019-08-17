@@ -10,6 +10,7 @@ function onMarkerClick(data) {
         var keys = Object.keys(popularStations);
         var startCoords = data['latlng'];
         var startName = data['target']['options']['name'];
+        var startColor = data['target']['options']['icolor'];
 
         for (key in popularStations) {
             // get top 3 most popular endpoints from current station
@@ -24,14 +25,19 @@ function onMarkerClick(data) {
         }
 
         $('.notice-current').html('<strong>Start</strong> ' + startName);
+        $('.notice-current').css('border-color', startColor);
+        $('.notice-current>strong').css('color', startColor);
         $('.notice-current').toggle();
 
         for (i = 0; i <= 2; i++) {
             // toggle most popular stations
             var key = keys[i];
             var name = popularStations[key]['name'];
-            $('.notice-popular-' + i).toggle();
+            var color = popularStations[key]['color'];
             $('.notice-popular-' + i).html('<strong>Popular destination</strong> ' + name);
+            $('.notice-popular-' + i).css('border-color', color);
+            $('.notice-popular-' + i + '>strong').css('color', color);
+            $('.notice-popular-' + i).toggle();
         }
 
     } else if (handler.isStartPointSet && !handler.isPredicted) {
@@ -125,14 +131,10 @@ $.ajax({
     url: '/get_stations',
     contentType: 'application/json',
     success: function(data) {
-        var i = 0;
-
         for (var key in data) {
             // load all stations with id and metadata
             var station = data[key];
-            // that's a big nono. TODO store station color in names.json
-            const color = palette[i.toString()]['hex'];
-            i++;
+            var color = data[key]['color'];
 
             // src https://stackoverflow.com/questions/23567203/leaflet-changing-marker-color
             const markerHtmlStyles = `
@@ -157,7 +159,12 @@ $.ajax({
 
             var marker = L.marker(
                 [station['latitude'], station['longitude']],
-                {id: key, name: station['name'], popular: data[key]['pop_dest'], icon: icon, icolor: color}
+                {
+                    id: key, name: station['name'], 
+                    popular: data[key]['pop_dest'], 
+                    icon: icon, 
+                    icolor: data[key]['color']
+                }
             );
 
             marker.addTo(map);
