@@ -1,9 +1,9 @@
 const handler = new MapEventHandler();
+var toggleSpeed = 300;
 
 function onMarkerClick(data) {
     
     if (!handler.isStartPointSet && !handler.isPredicted) {
-        console.log(data);
         // new starting point
         handler.setStartPoint(data);
         var popularStations = data['target']['options']['popular'];
@@ -27,7 +27,8 @@ function onMarkerClick(data) {
         $('.notice-current').html('<strong>Start</strong> ' + startName);
         $('.notice-current').css('border-color', startColor);
         $('.notice-current>strong').css('color', startColor);
-        $('.notice-current').toggle();
+        $('.notice-current').toggle(toggleSpeed);
+        $('#manual').toggle();
 
         for (i = 0; i <= 2; i++) {
             // toggle most popular stations
@@ -37,7 +38,7 @@ function onMarkerClick(data) {
             $('.notice-popular-' + i).html('<strong>Popular destination</strong> ' + name);
             $('.notice-popular-' + i).css('border-color', color);
             $('.notice-popular-' + i + '>strong').css('color', color);
-            $('.notice-popular-' + i).toggle();
+            $('.notice-popular-' + i).toggle(toggleSpeed);
         }
 
     } else if (handler.isStartPointSet && !handler.isPredicted) {
@@ -74,8 +75,8 @@ function onMarkerClick(data) {
             $('.notice-end').html('<strong>End</strong> ' + endName);
             $('.notice-end').css('border-color', endColor);
             $('.notice-end>strong').css('color', endColor);
-            $('.notice-end').toggle();
-            $('.notice-predicted').toggle();
+            $('.notice-end').toggle(toggleSpeed);
+            $('.notice-predicted').toggle(toggleSpeed);
         });
 
     }
@@ -87,18 +88,20 @@ function onMapClick(data) {
         // prediction has been made reset map to original state
         handler.reset();
         clearAllPolylines();
-        $('.notice-current').toggle();
-        $('.notice-end').toggle();
-        $('.notice-predicted').toggle();
+        $('.notice-current').toggle(toggleSpeed);
+        $('.notice-end').toggle(toggleSpeed);
+        $('.notice-predicted').toggle(toggleSpeed);
+        $('#manual').toggle(toggleSpeed);
 
     } else if (!handler.isPredicted && handler.isStartPointSet) {
         // reset without prediction on user call
         handler.startPointSet = false;
         clearAllPolylines();
-        $('.notice-current').toggle();
+        $('.notice-current').toggle(toggleSpeed);
+        $('#manual').toggle(toggleSpeed);
         
         for (i = 0; i <= 2; i++) {
-            $('.notice-popular-' + i).toggle();
+            $('.notice-popular-' + i).toggle(toggleSpeed);
         }
 
     }

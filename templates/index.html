@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icons/favicon.ico') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""/>
@@ -13,33 +14,45 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>fullstack.ai</title>
 </head>
 <body>
     <div class="container fill">
-        <div class="row">
+        <div class="row" id="main-row">
             <div class="col-sm-9">
                 <div id="map"></div>
             </div>
             <div class="col-sm-3">
-                <div class="notice notice-current">
-                    <strong>Start</strong> selected
+                <div class="logo"><strong>fullstack.ai</strong></div>
+                <div class="row" id="icons">
+                    <div class="col">
+                        <ul class="list-unstyled">
+                            <li>
+                              <i class="fab fa-github" style="color: white;"></i>
+                              <a href="https://github.com/xadrianzetx/fullstack.ai" class="text-white">GitHub</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fab fa-linkedin" style="color: white;"></i>
+                                <a href="https://www.linkedin.com/in/xadrianzetx" class="text-white">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="notice notice-popular-0">
-                    <strong>Popular destination</strong> popular
+                <div id="manual">
+                    <div>Click marker to set as starting point, then another one to set as end point.</div>
+                    <div>Click map to reset.</div>
                 </div>
-                <div class="notice notice-popular-1">
-                    <strong>Popular destination</strong> popular
-                </div>
-                <div class="notice notice-popular-2">
-                    <strong>Popular destination</strong> popular
-                </div>
-                <div class="notice notice-end">
-                    <strong>End</strong> end
-                </div>
-                <div class="notice notice-predicted">
-                    <strong>Predicted trip time</strong> time
-                </div>
+                <div class="notice notice-current"></div>
+                <div class="notice notice-popular-0"></div>
+                <div class="notice notice-popular-1"></div>
+                <div class="notice notice-popular-2"></div>
+                <div class="notice notice-end"></div>
+                <div class="notice notice-predicted"></div>
             </div>
         </div>
     </div>
