@@ -60,7 +60,7 @@ def get_stations():
             valid station ids with names and coordinates
     """
     path = 'backend/assets/station_data/'
-    file = 'station_names_v2.json'
+    file = 'station_names_v3.json'
 
     with open(os.path.join(path, file), 'r') as f:
         data = json.load(f)
