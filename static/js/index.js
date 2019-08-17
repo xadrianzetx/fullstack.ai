@@ -20,7 +20,7 @@ function onMarkerClick(data) {
             var latlng = [latlngStart, latlngEnd];
             
             var poly = L.polyline(latlng);
-            poly.setStyle({color: 'black'});
+            poly.setStyle({color: startColor, weight: 5, opacity: 0.7});
             poly.addTo(map);
         }
 
@@ -47,13 +47,12 @@ function onMarkerClick(data) {
 
             var startCoords = handler.startStationCoords;
             var currentCoords = data['latlng'];
-            var latlng = [
-                [startCoords['lat'], startCoords['lng']],
-                [currentCoords['lat'], currentCoords['lng']]
-            ];
+            var latlngStart = [startCoords['lat'], startCoords['lng']];
+            var latlngEnd = [currentCoords['lat'], currentCoords['lng']];
+            var latlng = [latlngStart, latlngEnd];
 
             var poly = L.polyline(latlng);
-            poly.setStyle({color: 'red'});
+            poly.setStyle({color: '#fe6a3a', weight: 6});
             poly.addTo(map);
 
             for (i = 0; i <= 2; i++) {
@@ -66,10 +65,15 @@ function onMarkerClick(data) {
             var sec = Math.round((datum['predicted'] - min) * 60);
             var total = min + ' minutes ' + sec + ' seconds'
             var endName = data['target']['options']['name'];
+            var endColor = data['target']['options']['icolor'];
             
-            // toggle notes with updated text
+            // toggle notes with updated text and color
             $('.notice-predicted').html('<strong>Predicted trip time</strong> ' + total);
+            $('.notice-predicted').css('border-color', '#fe6a3a');
+            $('.notice-predicted>strong').css('color', '#fe6a3a');
             $('.notice-end').html('<strong>End</strong> ' + endName);
+            $('.notice-end').css('border-color', endColor);
+            $('.notice-end>strong').css('color', endColor);
             $('.notice-end').toggle();
             $('.notice-predicted').toggle();
         });
@@ -132,10 +136,11 @@ $.ajax({
     contentType: 'application/json',
     success: function(data) {
         for (var key in data) {
-            // load all stations with id and metadata
+            // load all stations
             var station = data[key];
             var color = data[key]['color'];
-
+            
+            // set custom map markers
             // src https://stackoverflow.com/questions/23567203/leaflet-changing-marker-color
             const markerHtmlStyles = `
                 background-color: ${color};
@@ -156,7 +161,8 @@ $.ajax({
                 popupAnchor: [0, 0],
                 html: `<span style="${markerHtmlStyles}" />`
             });
-
+            
+            // add marker with metadata
             var marker = L.marker(
                 [station['latitude'], station['longitude']],
                 {
