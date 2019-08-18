@@ -1,0 +1,4 @@
+pandas
+lightgbm
+scikit-learn
+Flask
