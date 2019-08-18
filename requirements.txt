@@ -3,3 +3,4 @@ lightgbm
 scikit-learn
 Flask
 tqdm
+requests
