@@ -2,3 +2,4 @@ pandas
 lightgbm
 scikit-learn
 Flask
+tqdm
