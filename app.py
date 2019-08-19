@@ -1,5 +1,6 @@
 import os
 import json
+import pkg_resources
 from flask import Flask, Response, render_template, request
 from backend.preprocessing import TripTimePreprocessor
 from backend.models import TripTimeEstimator
@@ -59,10 +60,11 @@ def get_stations():
     GET:    json
             valid station ids with names and coordinates
     """
-    path = 'backend/assets/station_data/'
+    path = 'assets/station_data/'
     file = 'station_names_v3.json'
+    realpath = pkg_resources.resource_filename('backend', os.path.join(path, file))
 
-    with open(os.path.join(path, file), 'r') as f:
+    with open(realpath, 'r') as f:
         data = json.load(f)
 
     return Response(json.dumps(data, indent=4), status=200, mimetype='application/json')
@@ -109,10 +111,11 @@ def api():
     pred, valid = get_trip_time(start_id, end_id)
 
     if valid:
-        path = 'backend/assets/station_data/'
+        path = 'assets/station_data/'
         file = 'station_names.json'
+        realpath = pkg_resources.resource_filename('backend', os.path.join(path, file))
 
-        with open(os.path.join(path, file), 'r') as f:
+        with open(realpath, 'r') as f:
             # load json with metadata and add to response
             data = json.load(f)
             start = data[start_id]
@@ -139,10 +142,11 @@ def api_stations():
     GET:    json
             valid station ids with names
     """
-    path = 'backend/assets/station_data/'
+    path = 'assets/station_data/'
     file = 'station_names.json'
+    realpath = pkg_resources.resource_filename('backend', os.path.join(path, file))
 
-    with open(os.path.join(path, file), 'r') as f:
+    with open(realpath, 'r') as f:
         data = json.load(f)
         payload = {}
 
