@@ -22,11 +22,16 @@ I'll be using [SF Bay Area Bike Share](https://www.kaggle.com/benhamner/sf-bay-a
 
 ## UI
 
-![](https://github.com/xadrianzetx/fullstack.ai/blob/master/gifs/faiui.gif)
+<p align="center">
+<image src="https://github.com/xadrianzetx/fullstack.ai/blob/master/gifs/faiui.gif"></image>
+</p>
+
 
 ## API
 
-![](https://github.com/xadrianzetx/fullstack.ai/blob/master/gifs/faiapi.gif)
+<p align="center">
+<image src="https://github.com/xadrianzetx/fullstack.ai/blob/master/gifs/faiapi.gif"></image>
+</p>
 
 ## Notebooks
 
