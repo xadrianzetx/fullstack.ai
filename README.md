@@ -65,3 +65,28 @@ docker pull nginx:latest && docker-compose up --build -d
 ```
 
 Nginx configuration maps reverse proxy server to port ```80```
+
+## API guide
+
+API for hosted example is available at 
+
+``` https://fullstackai.pythonanywhere.com/api```
+
+### GET valid station id
+
+```curl -i "https://fullstackai.pythonanywhere.com/api/stations"```
+
+### GET predicted trip time between two stations
+
+<pre>
+"https://fullstackai.pythonanywhere.com/api?start=<i>start_id</i>&end=<i>end_id</i>
+</pre>
+
+### Parameters
+
+* <pre><i>start_id</i></pre> (required) Valid start station id
+* <pre><i>end_id</i></pre> (required) Valid end station id
+
+### Example
+
+```curl -i "https://fullstackai.pythonanywhere.com/api?start=73&end=39"```
