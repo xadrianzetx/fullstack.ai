@@ -30,7 +30,7 @@ I'll be using [SF Bay Area Bike Share](https://www.kaggle.com/benhamner/sf-bay-a
 ## API
 
 <p align="center">
-<image src="https://github.com/xadrianzetx/fullstack.ai/blob/master/gifs/faiapi.gif"></image>
+<image src="https://github.com/xadrianzetx/fullstack.ai/blob/master/gifs/faiapi2.gif"></image>
 </p>
 
 ## Notebooks
