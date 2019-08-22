@@ -84,8 +84,8 @@ API for hosted example is available at
 
 ### Parameters
 
-* <pre><i>start_id</i></pre> (required) Valid start station id
-* <pre><i>end_id</i></pre> (required) Valid end station id
+* ```start_id``` (required) Valid start station id
+* ```end_id``` (required) Valid end station id
 
 ### Example
 
