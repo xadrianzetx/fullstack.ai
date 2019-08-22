@@ -19,6 +19,14 @@ This basically covers most of ML tech stack up to CI/CD pipeline.
 
 I'll be using [SF Bay Area Bike Share](https://www.kaggle.com/benhamner/sf-bay-area-bike-share) dataset to model duration of bike travel across San Francisco. This dataset is bit dated and task itself is probably bit banal, but hey, this project is all about tech stack and leveraging different tools and ml techniques to achive my goal - a web based ml driven bike trip advisor with trip time prediction.
 
+## Notebooks
+
+* [Introduction and database](https://colab.research.google.com/drive/1CTkqQqJ0AeOVOyOt72wXPRA4EAelczT7)
+* [EDA and feature engineering](https://colab.research.google.com/drive/1XqpKyyOcJvene56QvdpDkheXIPAPR4Zq)
+* [Final preprocessing and models](https://colab.research.google.com/drive/1ScEaYTg3dOSH0qnIAvBZ7e-qSVSoxJG1)
+* [Bayesian optimization](https://colab.research.google.com/drive/1ZcOH0TnmNkCMbDoyjtXZCTyWQjEL_jEx)
+* [Model Evaluation](https://colab.research.google.com/drive/1piEA-OwvmfkGna-rNfiE2-WHUVUxrwUS)
+
 
 ## UI
 
@@ -32,15 +40,6 @@ I'll be using [SF Bay Area Bike Share](https://www.kaggle.com/benhamner/sf-bay-a
 <p align="center">
 <image src="https://github.com/xadrianzetx/fullstack.ai/blob/master/gifs/faiapi2.gif"></image>
 </p>
-
-## Notebooks
-
-* [Introduction and database](https://colab.research.google.com/drive/1CTkqQqJ0AeOVOyOt72wXPRA4EAelczT7)
-* [EDA and feature engineering](https://colab.research.google.com/drive/1XqpKyyOcJvene56QvdpDkheXIPAPR4Zq)
-* [Final preprocessing and models](https://colab.research.google.com/drive/1ScEaYTg3dOSH0qnIAvBZ7e-qSVSoxJG1)
-* [Bayesian optimization](https://colab.research.google.com/drive/1ZcOH0TnmNkCMbDoyjtXZCTyWQjEL_jEx)
-* [Model Evaluation](https://colab.research.google.com/drive/1piEA-OwvmfkGna-rNfiE2-WHUVUxrwUS)
-
 
 ## Run
 
