@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/xadrianzetx/fullstack.ai.svg?branch=master)](https://travis-ci.org/xadrianzetx/fullstack.ai)
+
 # fullstack.ai
 
 End-to-end machine learning project showing key aspects of developing and deploying real life machine learning driven application.
