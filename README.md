@@ -79,9 +79,8 @@ API for hosted example is available at
 
 ### GET predicted trip time between two stations
 
-<pre>
-"https://fullstackai.pythonanywhere.com/api?start=<i>start_id</i>&end=<i>end_id</i>
-</pre>
+
+```https://fullstackai.pythonanywhere.com/api?start=<i>start_id</i>&end=<i>end_id</i>```
 
 ### Parameters
 
