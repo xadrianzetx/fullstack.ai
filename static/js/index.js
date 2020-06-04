@@ -124,15 +124,14 @@ function clearAllPolylines() {
 var map = L.map('map').setView([37.788850, -122.401967], 14);
 map.on('click', onMapClick);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+L.tileLayer(proxyUrl + '?id={id}&z={z}&x={x}&y={y}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">\
         OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">\
         CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     tileSize: 512,
     zoomOffset: -1,
     maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    accessToken: config['mapboxApiKey']
+    id: 'mapbox/streets-v11'
 }).addTo(map);
 
 $.ajax({
