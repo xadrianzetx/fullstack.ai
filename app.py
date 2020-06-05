@@ -1,7 +1,10 @@
 import os
 import json
+import requests
+import settings
 import pkg_resources
 from flask import Flask, Response, render_template, request
+from backend import utils
 from backend.preprocessing import TripTimePreprocessor
 from backend.models import TripTimeEstimator
 
@@ -92,6 +95,24 @@ def get_prediction():
         code = 404
 
     return Response(payload, status=code, mimetype='application/json')
+
+
+@APP.route('/proxy/mapbox')
+def proxy_mapbox():
+    """
+    Serves as proxy for mapbox API calls
+    hiding exposed API key
+    """
+    # get requested tile params
+    args = ['x', 'y', 'z', 'id']
+    params = {arg: request.args.get(arg) for arg in args}
+    token = settings.MAPBOX_API_KEY
+
+    # server-side mapbox API call to hide the key
+    mapbox_url = utils.format_mapbox_url(**params)
+    r = requests.get(mapbox_url, params={'access_token': token})
+    
+    return Response(r.content, status=r.status_code, mimetype=r.headers['content-type'])
 
 
 @APP.route('/api', methods=['GET'])
