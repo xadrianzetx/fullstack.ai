@@ -45,24 +45,12 @@ I'll be using [SF Bay Area Bike Share](https://www.kaggle.com/benhamner/sf-bay-a
 
 ## Run
 
-In order to deploy, you'll need to get mapbox API key [here.](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/) Then run
+In order to deploy, you'll need to get mapbox API key [here.](https://docs.mapbox.com/help/how-mapbox-works/access-tokens/) Then in project directory run
 
 ```
-cd static/js && touch config.js
-```
-
-```config.js``` should look like this
-
-```
-const config = {
-    'mapboxApiKey': your.api.key.here
-}
-```
-
-Having done this, app is now ready to deploy, so go to top of directory and build Nginx and app containers using
-
-```
-docker pull nginx:latest && docker-compose up --build -d
+echo MAPBOX_API_KEY=your.api.key > .env && \
+docker pull nginx:latest && \
+docker-compose up --build -d
 ```
 
 Nginx configuration maps reverse proxy server to port ```80```
