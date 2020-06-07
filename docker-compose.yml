@@ -15,6 +15,8 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    env_file:
+      - .env
     container_name: flask
     networks:
       net:

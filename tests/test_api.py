@@ -79,6 +79,10 @@ class TestApplicationAPI(unittest.TestCase):
             query_string={'start': 73, 'end': 39}
         )
         self.assertEqual(response.status_code, 405)
+    
+    def test_proxy_no_params(self):
+        response = APP.test_client().get('/proxy/mapbox')
+        self.assertEqual(response.status_code, 404)
 
 
 if __name__ == "__main__":

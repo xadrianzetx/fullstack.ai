@@ -109,3 +109,7 @@ def lgbm_regression_cv(x, y, params, cv=10):
     y = [np.expm1(i) for i in y]
 
     return mean_squared_error(y, cv_pred)
+
+
+def format_mapbox_url(x, y, z, id):
+    return f'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}'
