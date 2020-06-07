@@ -82,7 +82,7 @@ class TestApplicationAPI(unittest.TestCase):
     
     def test_proxy_no_params(self):
         response = APP.test_client().get('/proxy/mapbox')
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 401)
 
 
 if __name__ == "__main__":
